@@ -23,6 +23,12 @@ const AddForm = (props) => {
         if (state.name === "" || state.position === "" || state.nickname === "") {
             const errorMessage = "Name, position and nickname fields are required.";
             props.setError(errorMessage);
+        } else {
+          setState({
+            ...state,
+            id: Date.now()
+          });
+          props.addSmurf(state);
         }
     }
 
