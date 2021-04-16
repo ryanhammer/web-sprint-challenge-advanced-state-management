@@ -1,3 +1,11 @@
+import { 
+  FETCH_SMURFS_START,
+  FETCH_SMURFS_SUCCESS,
+  FETCH_SMURFS_FAILURE,
+  ADD_SMURF,
+  ADD_ERROR
+} from '../actions';
+
 
 export const initialState = {
   smurfs: [],
@@ -5,21 +13,21 @@ export const initialState = {
   error: ''
 }
 
-const reducer = (state=initialState, action) => {
+export const reducer = (state=initialState, action) => {
   switch (action.type) {
-    case GET_SMURFS_START:
+    case FETCH_SMURFS_START:
       return {
         ...state,
         error: '',
         isLoading: true
       };
-    case GET_SMURFS_SUCCESS:
+    case FETCH_SMURFS_SUCCESS:
       return {
         ...state,
         smurfs: action.payload,
         isLoading: false
       };
-    case GET_SMURFS_FAILURE:
+    case FETCH_SMURFS_FAILURE:
       return {
         ...state,
         error: action.payload,
@@ -40,7 +48,6 @@ const reducer = (state=initialState, action) => {
   }
 }
 
-export default reducer;
 
 //Task List:
 //1. Adds the following state values into the initialState:
