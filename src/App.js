@@ -12,7 +12,7 @@ import { fetchSmurfs } from "./actions";
 class App extends Component {
 
   componentDidMount() {
-    fetchSmurfs();
+    this.props.fetchSmurfs();
   }
 
   render() {
@@ -32,12 +32,5 @@ class App extends Component {
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.
 //2. Call the fetchSmurfs action when the component first loads.
-// const mapStateToProps = (state) => {
-//   return {
-//     smurfs: state.smurfs,
-//     isLoading: state.isLoading,
-//     error: state.error
-//   }
-// }
 
 export default connect(null, { fetchSmurfs })(App);
